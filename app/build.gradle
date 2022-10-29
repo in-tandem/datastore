@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id "me.champeau.jmh" version "0.6.8"
 }
 
 repositories {
@@ -37,7 +38,10 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
-
+jmh{
+    resultFormat ='json'
+//    profilers = ['gc']
+}
 application {
     // Define the main class for the application.
     mainClass = 'datastore.App'

@@ -60,7 +60,7 @@ public class MultiMapJournal<K extends Serializable & Comparable<K>, V extends S
             Files.createFile(Path.of(fileName));
         Output output = null;
         try {
-            System.out.println("size of object being flushed = "+memTable.size());
+            System.out.println("multi size of object being flushed = "+memTable.size());
             output = new Output(new FileOutputStream(fileName));
             kryoLocal.get().writeObject(output, memTable);
         } finally {
